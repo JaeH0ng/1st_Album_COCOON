@@ -1,4 +1,4 @@
-/* 구글 웹폰트 불러오기 */
+/* 구글 웹폰트 불러오기 */ 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
@@ -9,19 +9,63 @@
   box-sizing: border-box;
 }
 
+/* ------------------------------------------- */
+/* 기존 body 스타일 주석 처리                  */
+/* ------------------------------------------- */
+/*
 body {
   font-family: 'Noto Sans KR', sans-serif;
   background-color: #f7fafc;
   color: #2d3748;
   line-height: 1.6;
 }
+*/
+
+/* 🌙 새로운 밤하늘 배경 */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1500&q=80')
+    no-repeat center center fixed;
+  background-size: cover;
+  color: #e8e8e8;
+  line-height: 1.6;
+}
+
+/* ✨ 별 반짝임 */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 2px 2px;
+  opacity: 0.05;
+  animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.03; }
+  to { opacity: 0.08; }
+}
 
 /* 헤더 */
 header {
   text-align: center;
   padding: 3rem 1rem 2rem;
+
+  /* 기존 밝은 헤더 주석 */
+  /*
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   color: #2d3748;
+  */
+  
+  /* 🌙 헤더 어둡게 */
+  background: rgba(20, 20, 20, 0.7);
+  color: #f1f1f1;
+
   border-bottom: 3px solid #6a0d25;
   position: relative;
   overflow: hidden;
@@ -34,7 +78,13 @@ header::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23000" opacity="0.02"/><circle cx="80" cy="80" r="1" fill="%23000" opacity="0.02"/><circle cx="40" cy="60" r="1" fill="%23000" opacity="0.02"/><circle cx="60" cy="40" r="1" fill="%23000" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+
+  /* 기존 패턴 주석 */
+  /*
+  background: url('data:image/svg+xml,<svg ... </svg>');
+  */
+
+  background: transparent;
   pointer-events: none;
 }
 
@@ -42,17 +92,9 @@ header h1 {
   font-size: 2.8rem;
   margin-bottom: 0.5rem;
   font-weight: 300;
-  color: #6a0d25;
+  color: #ffccd5;
   font-family: 'Nanum Pen Script', cursive;
   letter-spacing: 2px;
-}
-
-header .subtitle {
-  font-size: 1rem;
-  color: #718096;
-  margin-bottom: 2rem;
-  font-weight: 400;
-  font-style: italic;
 }
 
 header p {
@@ -61,10 +103,10 @@ header p {
   margin: 0 auto 1.5rem;
   line-height: 1.7;
   font-weight: 400;
-  color: #4a5568;
+  color: #e0e0e0;
 }
 
-/* 소셜 버튼 영역 */
+/* 소셜 버튼 */
 .social-buttons {
   display: flex;
   justify-content: center;
@@ -73,7 +115,6 @@ header p {
   margin-top: 2rem;
 }
 
-/* 아이콘 링크 (인스타, 사운드클라우드 등) */
 .icon-link {
   background-color: #6a0d25;
   color: #fff;
@@ -89,20 +130,10 @@ header p {
   font-size: 0.9rem;
 }
 
-.icon-link i {
-  font-size: 16px;
-  color: #fff;
-}
-
 .icon-link:hover {
   background-color: transparent;
-  border-color: #6a0d25;
-  color: #6a0d25;
-  transform: translateY(-1px);
-}
-
-.icon-link:hover i {
-  color: #6a0d25;
+  border-color: #ffccd5;
+  color: #ffccd5;
 }
 
 /* 메인 콘텐츠 */
@@ -112,271 +143,151 @@ main {
   margin: 0 auto;
 }
 
-/* 곡 섹션 */
+/* ------------------------------------------- */
+/* 기존 섹션(card) 스타일 주석 처리           */
+/* ------------------------------------------- */
+/*
+section {
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+*/
+
+/* 🌙 밤하늘 스타일 섹션 */
 section {
   margin-bottom: 3rem;
-  background: #fff;
+  background: rgba(25, 25, 25, 0.85);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 /* 곡 헤더 */
 .song-header {
+
+  /* 기존 주석 처리 */
+  /*
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border-bottom: 1px solid #e9ecef;
+  */
+
+  /* 🌙 다크 */
+  background: linear-gradient(135deg, #2b2b2b 0%, #3a3a3a 100%);
+  border-bottom: 1px solid #555;
+
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-  border-bottom: 1px solid #e9ecef;
 }
 
 .song-header h2 {
   font-size: 1.6rem;
-  color: #6a0d25;
+  color: #ffccd5;
   font-weight: 600;
-  margin: 0;
 }
 
-/* 가사 토글 버튼 */
-.lyrics-toggle {
-  background: #6a0d25;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(106, 13, 37, 0.3);
-}
-
-.lyrics-toggle:hover {
-  background: #8e1c3a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(106, 13, 37, 0.4);
-}
-
-.lyrics-toggle i {
-  font-size: 0.8rem;
-  transition: transform 0.3s ease;
-}
-
-.lyrics-toggle:hover i {
-  transform: scale(1.2);
-}
-
-/* 설명 트리거 영역 */
+/* 설명 트리거 */
 .description-trigger {
-  padding: 1rem 2rem;
+
+  /* 기존 밝은 배경 주석 */
+  /*
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   border-bottom: 1px solid #dee2e6;
+  */
+
+  /* 🌙 새 배경 */
+  background: rgba(40, 40, 40, 0.85);
+  border-bottom: 1px solid #666;
+
+  padding: 1rem 2rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  min-height: 60px;
+  transition: 0.3s;
   display: flex;
   align-items: center;
-  position: relative;
 }
 
-.description-trigger:hover {
-  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
-}
-
-.description-trigger:hover::after {
-  content: "💭 이 곡에 대한 이야기...";
-  position: absolute;
-  right: 2rem;
-  font-size: 0.8rem;
-  color: #6a0d25;
-  font-weight: 500;
-  opacity: 0.8;
-}
-
-/* 점들 스타일 */
 .description-dots {
-  font-size: 1rem;
-  color: #6a0d25;
+  color: #ffccd5;
   font-weight: 500;
-  animation: pulse 2s infinite;
-}
-
-.description-dots::before {
-  content: attr(data-order) " 이야기👆";
-  margin-right: 0.5rem;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
 }
 
 /* 설명 내용 */
 .description-content {
+
+  /* 기존 */
+  /*
+  color: #4a5568;
+  border-left: 3px solid #6a0d25;
+  */
+
+  /* 🌙 변경 */
+  color: #eee;
+  border-left: 3px solid #ffccd5;
+
   display: none;
   font-size: 1rem;
-  color: #4a5568;
-  line-height: 1.7;
-  font-style: italic;
-  border-left: 3px solid #6a0d25;
   padding-left: 1rem;
-  white-space: pre-wrap;
+  line-height: 1.7;
 }
 
 /* 가사 컨테이너 */
 .lyrics-container {
-  display: none;
-  padding: 0 2rem 2rem;
+  /* 기존 밝은 배경 주석 */
+  /*
   background: #fff;
+  */
+  background: rgba(20, 20, 20, 0.85);
+
+  padding: 0 2rem 2rem;
 }
 
 /* 가사 스타일 */
 .lyrics {
   font-family: 'Nanum Pen Script', cursive;
-  font-size: 1.4rem;
-  line-height: 2;
+
+  /* 기존 밝은 배경 주석 */
+  /*
   background: linear-gradient(135deg, #fff8f0 0%, #f8f9fa 100%);
   color: #333;
+  border-left: 4px solid #e2e8f0;
+  */
+
+  /* 🌙 어두운 가사 */
+  background: linear-gradient(135deg, #1e1e1e 0%, #2b2b2b 100%);
+  color: #f1f1f1;
+  border-left: 4px solid #777;
+
+  font-size: 1.4rem;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
   white-space: pre-wrap;
-  border-left: 4px solid #e2e8f0;
-  margin: 0;
 }
 
 /* 에러 메시지 */
 .error-message {
-  text-align: center;
-  padding: 3rem;
-  background: #fff;
+  background: rgba(50, 50, 50, 0.8);
+  color: #f5f5f5;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  margin: 2rem 0;
-}
-
-.error-message h2 {
-  color: #dc3545;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.error-message p {
-  color: #666;
-  font-size: 1rem;
+  padding: 3rem;
+  text-align: center;
 }
 
 /* 푸터 */
 footer {
-  text-align: center;
+  background: linear-gradient(135deg, #4a0d25 0%, #7e1c3a 100%);
+  color: #fff;
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, #6a0d25 0%, #8e1c3a 100%);
-  color: #fff;
-  font-size: 0.9rem;
-  margin-top: 3rem;
+  text-align: center;
 }
 
-footer a {
-  color: #ffccda;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* 스크롤바 커스터마이징 */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
+/* 스크롤바 */
 ::-webkit-scrollbar-thumb {
-  background: #6a0d25;
-  border-radius: 4px;
+  background: #ffccd5;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #8e1c3a;
-}
-
-/* 반응형 - 태블릿 */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-  
-  header p {
-    font-size: 1rem;
-  }
-
-  .song-header {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-    padding: 1.5rem;
-  }
-
-  .song-header h2 {
-    font-size: 1.4rem;
-  }
-
-  .lyrics-toggle {
-    align-self: stretch;
-    justify-content: center;
-  }
-
-  .description-trigger {
-    padding: 0.8rem 1.5rem;
-    min-height: 50px;
-  }
-
-  .description-trigger::after {
-    content: "👆 터치하세요" !important;
-    font-size: 0.7rem !important;
-    right: 1.5rem !important;
-  }
-
-  .description-content {
-    font-size: 0.9rem;
-    padding-left: 0.8rem;
-  }
-
-  .song-description {
-    padding: 1rem 1.5rem;
-  }
-
-  .lyrics-container {
-    padding: 0 1.5rem 1.5rem;
-  }
-
-  .lyrics {
-    font-size: 1.2rem;
-    padding: 1rem;
-  }
-
-  main {
-    padding: 1rem;
-  }
-}
-
-/* 반응형 - 모바일 */
 @media (max-width: 480px) {
   header {
     padding: 2rem 1rem;

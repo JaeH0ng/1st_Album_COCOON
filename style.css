@@ -56,36 +56,19 @@ header {
   text-align: center;
   padding: 3rem 1rem 2rem;
 
-  /* 기존 밝은 헤더 주석 */
+  /* 기존 헤더 주석 */
   /*
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   color: #2d3748;
   */
   
-  /* 🌙 헤더 어둡게 */
+  /* 🌙 어두운 헤더 */
   background: rgba(20, 20, 20, 0.7);
   color: #f1f1f1;
 
   border-bottom: 3px solid #6a0d25;
   position: relative;
   overflow: hidden;
-}
-
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  /* 기존 패턴 주석 */
-  /*
-  background: url('data:image/svg+xml,<svg ... </svg>');
-  */
-
-  background: transparent;
-  pointer-events: none;
 }
 
 header h1 {
@@ -102,7 +85,6 @@ header p {
   max-width: 600px;
   margin: 0 auto 1.5rem;
   line-height: 1.7;
-  font-weight: 400;
   color: #e0e0e0;
 }
 
@@ -125,9 +107,8 @@ header p {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
   border: 2px solid #6a0d25;
-  font-size: 0.9rem;
 }
 
 .icon-link:hover {
@@ -144,7 +125,7 @@ main {
 }
 
 /* ------------------------------------------- */
-/* 기존 섹션(card) 스타일 주석 처리           */
+/* 기존 section 카드 주석 처리                */
 /* ------------------------------------------- */
 /*
 section {
@@ -153,26 +134,31 @@ section {
 }
 */
 
-/* 🌙 밤하늘 스타일 섹션 */
+/* 🌙 다크 카드 */
 section {
   margin-bottom: 3rem;
   background: rgba(25, 25, 25, 0.85);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
 }
 
 /* 곡 헤더 */
 .song-header {
 
-  /* 기존 주석 처리 */
+  /* 기존 주석 */
   /*
-  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  background: linear-gradient(135deg,#fff,#f8f9fa);
   border-bottom: 1px solid #e9ecef;
   */
 
-  /* 🌙 다크 */
+  /* 🌙 새 헤더 */
   background: linear-gradient(135deg, #2b2b2b 0%, #3a3a3a 100%);
   border-bottom: 1px solid #555;
 
@@ -188,16 +174,42 @@ section {
   font-weight: 600;
 }
 
+/* ✅ 가사 토글 버튼 재정비 */
+.lyrics-toggle {
+  background: #ffccd5;
+  color: #2a2a2a;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.lyrics-toggle i {
+  color: #2a2a2a;
+}
+
+.lyrics-toggle:hover {
+  background: #ffc0cb;
+  transform: translateY(-2px);
+}
+
 /* 설명 트리거 */
 .description-trigger {
 
-  /* 기존 밝은 배경 주석 */
+  /* 기존 밝은 스타일 주석 */
   /*
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg,#f8f9fa,#e9ecef);
   border-bottom: 1px solid #dee2e6;
   */
 
-  /* 🌙 새 배경 */
+  /* 🌙 새로운 스타일 */
   background: rgba(40, 40, 40, 0.85);
   border-bottom: 1px solid #666;
 
@@ -216,13 +228,12 @@ section {
 /* 설명 내용 */
 .description-content {
 
-  /* 기존 */
+  /* 기존 주석 */
   /*
   color: #4a5568;
   border-left: 3px solid #6a0d25;
   */
 
-  /* 🌙 변경 */
   color: #eee;
   border-left: 3px solid #ffccd5;
 
@@ -234,12 +245,13 @@ section {
 
 /* 가사 컨테이너 */
 .lyrics-container {
-  /* 기존 밝은 배경 주석 */
+
+  /* 기존 */
   /*
   background: #fff;
   */
-  background: rgba(20, 20, 20, 0.85);
 
+  background: rgba(20,20,20,0.85);
   padding: 0 2rem 2rem;
 }
 
@@ -247,22 +259,21 @@ section {
 .lyrics {
   font-family: 'Nanum Pen Script', cursive;
 
-  /* 기존 밝은 배경 주석 */
   /*
-  background: linear-gradient(135deg, #fff8f0 0%, #f8f9fa 100%);
+  기존 배경
+  background: linear-gradient(135deg,#fff8f0,#f8f9fa);
   color: #333;
   border-left: 4px solid #e2e8f0;
   */
 
-  /* 🌙 어두운 가사 */
-  background: linear-gradient(135deg, #1e1e1e 0%, #2b2b2b 100%);
+  background: linear-gradient(135deg,#1e1e1e,#2b2b2b);
   color: #f1f1f1;
   border-left: 4px solid #777;
 
   font-size: 1.4rem;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.2);
   white-space: pre-wrap;
 }
 
@@ -277,10 +288,14 @@ section {
 
 /* 푸터 */
 footer {
-  background: linear-gradient(135deg, #4a0d25 0%, #7e1c3a 100%);
+  background: linear-gradient(135deg, #4a0d25, #7e1c3a);
   color: #fff;
   padding: 2rem 1rem;
   text-align: center;
+}
+
+footer a {
+  color: #ffccd5;
 }
 
 /* 스크롤바 */
@@ -288,6 +303,7 @@ footer {
   background: #ffccd5;
 }
 
+/* 모바일 대응 */
 @media (max-width: 480px) {
   header {
     padding: 2rem 1rem;
@@ -297,100 +313,30 @@ footer {
     font-size: 1.5rem;
   }
 
-  header p {
-    font-size: 0.9rem;
-  }
-
   .song-header {
     padding: 1rem;
-  }
-
-  .song-header h2 {
-    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
   .lyrics-toggle {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+    width: 100%;
+    justify-content: center;
   }
 
   .description-trigger {
     padding: 0.8rem 1rem;
-    min-height: 45px;
-  }
-
-  .description-trigger::after {
-    content: "" !important;
-    font-size: 0.8rem !important;
-    right: 1rem !important;
-  }
-
-  .description-content {
-    font-size: 0.85rem;
-    padding-left: 0.6rem;
-  }
-
-  .description-dots {
-    font-size: 0.9rem;
-  }
-
-  .lyrics-container {
-    padding: 0 1rem 1rem;
   }
 
   .lyrics {
     font-size: 1.1rem;
-    padding: 0.8rem;
-    line-height: 1.8;
-  }
-
-  main {
-    padding: 0.5rem;
   }
 }
 
-/* 접근성 향상 */
+/* 접근성 */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-}
-
-/* 다크 모드 지원 */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-  }
-
-  section {
-    background: #2d2d2d;
-    color: #e0e0e0;
-  }
-
-  .song-header {
-    background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%);
-    border-bottom-color: #4a4a4a;
-  }
-
-  .song-description {
-    background: #2d2d2d;
-    color: #b0b0b0;
-  }
-
-  .lyrics-container {
-    background: #2d2d2d;
-  }
-
-  .lyrics {
-    background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
-    color: #e0e0e0;
-  }
-
-  .error-message {
-    background: #2d2d2d;
-    color: #e0e0e0;
   }
 }
